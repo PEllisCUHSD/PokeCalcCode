@@ -7,7 +7,7 @@ public class PokeList
 	
 	
 	ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
-	
+	ArrayList<Pokemon> notFound = new ArrayList<Pokemon>();
 
 	public ArrayList<Pokemon> createList()
 	{
@@ -162,6 +162,11 @@ public class PokeList
 		pokemonList.add(new Pokemon("mewtwo", 3));
 		pokemonList.add(new Pokemon("mew", 35));
 		return pokemonList;
+	}
+	
+	public ArrayList<Pokemon> createNotFound()
+	{
+		return notFound;
 	}
 	
 }

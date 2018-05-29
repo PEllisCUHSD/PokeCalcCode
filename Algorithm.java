@@ -141,4 +141,23 @@ public class Algorithm
 			return true;
 		}
 	}
+	
+	public int rand2()
+	{
+		Random random2 = new Random(256);
+		return random2.nextInt(256);
+	}
+	
+	public boolean compRand2()
+	{
+		if(randTwo <= hpFactor)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 }

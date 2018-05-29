@@ -4,6 +4,8 @@ public class Algorithm
 {
 	private ArrayList<Pokemon> noWild = new ArrayList<Pokemon>();
 	private ArrayList<Pokemon> all = new ArrayList<Pokemon>();
+	private Pokemon poek;
+	private String location;
 	private String ball = "";
 	private int randOne;
 	private int status;
@@ -11,18 +13,20 @@ public class Algorithm
 	private int randTwo;
 	private int randPrime;
 	
-	public Algorithm(ArrayList<Pokemon> notWild, ArrayList<Pokemon> allPoke, String ballType)
+	public Algorithm(ArrayList<Pokemon> notWild, ArrayList<Pokemon> allPoke, String ballType, String pokemonIn, String locIn)
 	{
+		poek = new Pokemon("pokemonIn");
 		noWild = notWild;
 		all = allPoke;
 		ball = ballType;
+		location = locIn;
 	}
 	
-	public boolean foundInWild(Pokemon in)
+	public boolean foundInWild()
 	{
 		for(Pokemon not : noWild)
 		{
-			if(in.getName().equals(not.getName()))
+			if(poek.getName().equals(not.getName()))
 			{
 				return false;
 			}
@@ -30,9 +34,9 @@ public class Algorithm
 		return true;
 	}
 	
-	public boolean marrowakGhost(Pokemon in, String location)
+	public boolean marrowakGhost()
 	{
-		if(in.getName().equals("marrowak") && location.equals("pokemon tower"))
+		if(poek.getName().equals("marrowak") && location.equals("pokemon tower"))
 		{
 			return false;
 		}

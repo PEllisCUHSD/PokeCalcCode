@@ -9,6 +9,11 @@ public class Pokemon
 		catchRate = inp;
 	}
 	
+	public Pokemon(String in)
+	{
+		name = in;
+	}
+	
 	public int getRate()
 	{
 		return catchRate;

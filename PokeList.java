@@ -166,6 +166,52 @@ public class PokeList
 	
 	public ArrayList<Pokemon> createNotFound()
 	{
+		notFound.add(new Pokemon ("bulbasaur", 45));
+		notFound.add(new Pokemon ("ivasaur", 45));
+		notFound.add(new Pokemon ("venasaur", 45));
+		notFound.add(new Pokemon ("charmander", 45));
+		notFound.add(new Pokemon ("charmeleon", 45));
+		notFound.add(new Pokemon ("charizard", 45));
+		notFound.add(new Pokemon ("squirtle", 45));
+		notFound.add(new Pokemon ("wartortle", 45));
+		notFound.add(new Pokemon ("blastoise", 45));
+		notFound.add(new Pokemon ("butterfree", 45));
+		notFound.add(new Pokemon ("beedrill", 45));
+		notFound.add(new Pokemon ("pidgeot", 45));
+		notFound.add(new Pokemon ("nidoqueen", 45));
+		notFound.add(new Pokemon ("nidoking", 45));
+		notFound.add(new Pokemon ("clefable", 25));
+		notFound.add(new Pokemon ("vileplume", 45));
+		notFound.add(new Pokemon ("persian", 90));
+		notFound.add(new Pokemon ("primeape", 75));
+		notFound.add(new Pokemon ("arcanine", 75));
+		notFound.add(new Pokemon ("poliwrath", 45));
+		notFound.add(new Pokemon ("alakazam", 50));
+		notFound.add(new Pokemon ("machamp", 45));
+		notFound.add(new Pokemon ("victreebel", 45));
+		notFound.add(new Pokemon ("tentacruel", 60));
+		notFound.add(new Pokemon ("farfetchd", 45));
+		notFound.add(new Pokemon ("cloyster", 60));
+		notFound.add(new Pokemon ("gengar", 45));
+		notFound.add(new Pokemon ("exeggutor", 45));
+		notFound.add(new Pokemon ("hitmonlee", 45));
+		notFound.add(new Pokemon ("hitmonchan", 45));
+		notFound.add(new Pokemon ("starmie", 60));
+		notFound.add(new Pokemon ("mrmime", 45));
+		notFound.add(new Pokemon ("gyarados", 45));
+		notFound.add(new Pokemon ("lapras", 45));
+		notFound.add(new Pokemon ("eevee", 45));
+		notFound.add(new Pokemon ("vaporeon", 45));
+		notFound.add(new Pokemon ("flareon", 45));
+		notFound.add(new Pokemon ("jolteon", 45));
+		notFound.add(new Pokemon ("porygon", 45));
+		notFound.add(new Pokemon ("omanyte", 45));
+		notFound.add(new Pokemon ("omastar", 45));
+		notFound.add(new Pokemon ("kabuto", 45));
+		notFound.add(new Pokemon ("kabutops", 45));
+		notFound.add(new Pokemon ("aerodactyl", 45));
+		notFound.add(new Pokemon ("dragonair", 45));
+		notFound.add(new Pokemon ("dragonite", 45));
 		return notFound;
 	}
 	

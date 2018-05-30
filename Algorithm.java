@@ -7,26 +7,35 @@ public class Algorithm
 	private Pokemon poek;
 	private String location;
 	private String ball = "";
+	private String statusEffect;
+	private int maxHP;
+	private int curHP;
 	private int randOne;
 	private int status;
 	private int hpFactor;
 	private int randTwo;
 	private int randPrime;
 	
-	public Algorithm(ArrayList<Pokemon> notWild, ArrayList<Pokemon> allPoke, String ballType, String pokemonIn, String locIn)
+	public Algorithm(ArrayList<Pokemon> notWild, ArrayList<Pokemon> allPoke, String ballType, String pokemonIn, String locIn, String statusEffectIn, int maxHPIn, int curHPIn)
 	{
-		poek = new Pokemon("pokemonIn");
+		poek = new Pokemon(pokemonIn);
 		noWild = notWild;
 		all = allPoke;
 		ball = ballType;
 		location = locIn;
+		statusEffect = statusEffectIn;
+		maxHP = maxHPIn;
+		curHP = curHPIn;
 	}
 	
 	public boolean foundInWild()
 	{
 		for(Pokemon not : noWild)
 		{
-			if(poek.getName().equals(not.getName()))
+			String notName = not.getName();
+			String pokeName = poek.getName();
+			//System.out.println(notName + " " + pokeName);
+			if(pokeName.equalsIgnoreCase(notName))
 			{
 				return false;
 			}
@@ -36,7 +45,7 @@ public class Algorithm
 	
 	public boolean marrowakGhost()
 	{
-		if(poek.getName().equals("marrowak") && location.equals("pokemon tower"))
+		if(poek.getName().equals("marowak") && location.equals("pokemon tower"))
 		{
 			return false;
 		}
@@ -45,7 +54,7 @@ public class Algorithm
 	
 	public boolean isMasterBall()
 	{
-		if(ball.equals("master ball"))
+		if(ball.equals("master"))
 		{
 			return true;
 		}
@@ -60,7 +69,7 @@ public class Algorithm
 		{
 			randOne = rng.nextInt(256);
 		}
-		else if(ball.equals("great ball"))
+		else if(ball.equals("great"))
 		{
 			randOne = rng.nextInt(201);
 					
@@ -73,14 +82,14 @@ public class Algorithm
 		return randOne;
 	}
 	
-	public int status(String stat)
+	public int status()
 	{
 		int statVar;
-		if(stat.equals("asleep") || stat.equals("frozen"))
+		if(statusEffect.equals("asleep") || statusEffect.equals("frozen"))
 		{
 			statVar = 25;
 		}
-		else if(stat.equals("poisoned") || stat.equals("burned")|| stat.equals("paralyzed"))
+		else if(statusEffect.equals("poisoned") || statusEffect.equals("burned")|| statusEffect.equals("paralyzed"))
 		{
 			statVar = 12;
 		}
@@ -92,11 +101,11 @@ public class Algorithm
 		return statVar;
 	}
 	
-	public int hitPointFactor(int maxHP, int curHP)
+	public int hitPointFactor()
 	{
 		int factor;
 		factor = maxHP*255;
-		if(ball.equals("great ball"))
+		if(ball.equals("great"))
 		{
 			factor /= 8;
 		}
@@ -126,12 +135,12 @@ public class Algorithm
 		return randPrime;
 	}
 	
-	public boolean catchVersusRandPrime(Pokemon in)
+	public boolean catchVersusRandPrime()
 	{
 		int catchRate = 0;
 		for(Pokemon cur : all)
 		{
-			if(cur.getName().equals(in.getName()))
+			if(cur.getName().equals(poek.getName()))
 			{
 				catchRate = cur.getRate();
 			}
@@ -148,8 +157,9 @@ public class Algorithm
 	
 	public int rand2()
 	{
-		Random random2 = new Random(256);
-		return random2.nextInt(256);
+		Random random2 = new Random();
+		randTwo = random2.nextInt(256);
+		return randTwo;
 	}
 	
 	public boolean compRand2()
@@ -163,5 +173,7 @@ public class Algorithm
 			return false;
 		}
 	}
+	
+	
 	
 }
